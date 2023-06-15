@@ -1,5 +1,7 @@
+import { useTranslation } from "react-i18next";
 
 const Search = (props) => {
+  const [t] = useTranslation("global");
   return (
     <form
       onSubmit={props.onSubmit}
@@ -7,13 +9,13 @@ const Search = (props) => {
     >
       <input
         value={props.value}
-        placeholder="Find Locations"
+        placeholder={t("placeholder")}
         type="text"
         onChange={props.onChange}
         className="bg-light-200 dark:bg-dark-200 border-none text-dark-100 dark:text-light-100 px-3 py-2 rounded-xl focus:outline-none w-2/3"
       />
       <button className="bg-light-200 inline dark:bg-dark-200 text-dark-100 dark:text-light-100 rounded-xl px-4 py-2 transition duration-300 dark:hover:bg-light-200 dark:hover:text-dark-200 hover:bg-dark-200 hover:text-light-200">
-        Search
+        {t("search")}
       </button>
     </form>
   );

@@ -15,9 +15,11 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper";
+import { useTranslation } from "react-i18next";
 
 const FutureForecast = () => {
   const { futureForecast, tempUnit } = useContext(weatherContext);
+  const [t] = useTranslation("global");
 
   return (
     <Card>
@@ -31,7 +33,7 @@ const FutureForecast = () => {
           </button>
         </div>
         <h2 className="px-5 font-medium text-2xl pb-5 text-dark-100 dark:text-light-200 border-b-paragraph border-b-2">
-          10 day forecast
+          {t("title")}
         </h2>
         <div className="px-16 mt-10">
           <Swiper

@@ -7,10 +7,12 @@ import DayWeatherInfo from "./components/DayWeatherInfo/DayWeatherInfo";
 import Loading from "./components/UI/Loading";
 
 import Map from "./components/map/Map";
+import { useTranslation } from "react-i18next";
 
 function App() {
   const [enteredCity, setEnteredCity] = useState("");
   const [mode, setMode] = useState("light");
+  const [, i18next] = useTranslation("global");
 
   const {
     fetchWeatherData,
@@ -31,8 +33,9 @@ function App() {
     const savedLang = localStorage.getItem("lang");
     if (savedLang) {
       changeLangHandler(savedLang);
+      i18next.changeLanguage(savedLang.toLowerCase());
     }
-  }, [changeLangHandler]);
+  }, [changeLangHandler, i18next]);
 
   // get theme from local storage
   useEffect(() => {
@@ -56,9 +59,11 @@ function App() {
     if (enteredLang === "EN") {
       changeLangHandler("AR");
       localStorage.setItem("lang", "AR");
+      i18next.changeLanguage("ar");
     } else {
-      localStorage.setItem("lang", "EN");
       changeLangHandler("EN");
+      localStorage.setItem("lang", "EN");
+      i18next.changeLanguage("en");
     }
   };
 

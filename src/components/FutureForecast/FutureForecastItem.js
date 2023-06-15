@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { formattedDateNow } from "../../date";
 
 const FutureForecastItem = (props) => {
+  const [t] = useTranslation("global");
   const today = `${props.dayName} ${props.dayOfMonth} ${props.monthName}`;
 
   return (
@@ -13,10 +15,10 @@ const FutureForecastItem = (props) => {
               : "text-dark-100 dark:text-light-200"
           }`}
         >
-          {formattedDateNow === today ? "Today" : props.dayName}
+          {formattedDateNow === today ? t("today") : t(props.dayName.toLowerCase())}
         </p>
         <p className="text-paragraph">
-          {props.dayOfMonth} {props.monthName}
+          {props.dayOfMonth} {t(props.monthName.toLowerCase())}
         </p>
       </div>
       <img

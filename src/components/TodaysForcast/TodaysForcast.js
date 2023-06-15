@@ -67,56 +67,58 @@ const TodaysForcast = () => {
   }
 
   return (
-    <div className="px-4 relative">
+    <div className="relative">
       <div className="absolute top-1/2 w-full z-10">
-        <button className="prev-button p-1 text-xs bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute -left-2">
+        <button className="prev-button p-1 text-xs bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute left-5">
           <IoIosArrowBack />
         </button>
         <button className="next-button p-1 text-xs bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute right-5">
           <IoIosArrowForward />
         </button>
       </div>
-      <Swiper
-        slidesPerView={1}
-        navigation={{ prevEl: ".prev-button", nextEl: ".next-button" }}
-        spaceBetween={0}
-        breakpoints={{
-          220: {
-            slidesPerView: 3,
-          },
-          320: {
-            slidesPerView: 4,
-          },
-          520: {
-            slidesPerView: 7,
-            spaceBetween: 0,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 0,
-          },
-          1024: {
-            slidesPerView: 6,
-            spaceBetween: 0,
-          },
-        }}
-        modules={[Navigation]}
-        className="mySwiper"
-      >
-        <ul className="flex mt-6 ">
-          {sortedTimes.map((h) => (
-            <SwiperSlide key={h.time_epoch}>
-              <TodaysForecastItem
-                key={h.time_epoch}
-                hour={new Date(h.time).getHours()}
-                icon={h.condition.icon}
-                tempDeg={tempUnit === "C" ? h.temp_c : h.temp_f}
-                currentHour={currentHour}
-              />
-            </SwiperSlide>
-          ))}
-        </ul>
-      </Swiper>
+      <div className="px-5 mt-6">
+        <Swiper
+          slidesPerView={1}
+          navigation={{ prevEl: ".prev-button", nextEl: ".next-button" }}
+          spaceBetween={0}
+          breakpoints={{
+            220: {
+              slidesPerView: 3,
+            },
+            320: {
+              slidesPerView: 4,
+            },
+            520: {
+              slidesPerView: 7,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 6,
+              spaceBetween: 0,
+            },
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <ul>
+            {sortedTimes.map((h) => (
+              <SwiperSlide key={h.time_epoch}>
+                <TodaysForecastItem
+                  key={h.time_epoch}
+                  hour={new Date(h.time).getHours()}
+                  icon={h.condition.icon}
+                  tempDeg={tempUnit === "C" ? h.temp_c : h.temp_f}
+                  currentHour={currentHour}
+                />
+              </SwiperSlide>
+            ))}
+          </ul>
+        </Swiper>
+      </div>
     </div>
   );
 };
