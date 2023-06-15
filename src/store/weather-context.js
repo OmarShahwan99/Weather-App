@@ -78,6 +78,7 @@ export const WeatherProvider = (props) => {
         setFutureForecast(weatherData.forecast.forecastday);
       } catch (error) {
         setIsLoading(false);
+        console.log(error);
       }
     }
   }, [lang, city]);
