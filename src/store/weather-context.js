@@ -8,9 +8,9 @@ const weatherContext = createContext({
   location: {},
   lat: 0,
   lon: 0,
-  locationName: '',
+  locationName: "",
   currentWeatherData: {},
-  currentIcon: '',
+  currentIcon: "",
   todaysForecast: [],
   futureForecast: [],
   isLoading: false,
@@ -24,11 +24,11 @@ export const WeatherProvider = (props) => {
   const [city, setCity] = useState();
   const [lang, setLang] = useState("en");
   const [tempUnit, setTempUnit] = useState("C");
-  const [locationName, setLocationName] = useState('');
+  const [locationName, setLocationName] = useState("");
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
   const [currentWeatherData, setCurrentWeatherData] = useState({});
-  const [currentIcon, setCurrentIcon] = useState('');
+  const [currentIcon, setCurrentIcon] = useState("");
   const [todaysForecast, setTodaysForeCast] = useState([]);
   const [futureForecast, setFutureForecast] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -43,20 +43,20 @@ export const WeatherProvider = (props) => {
 
   const changeUnitHandler = (unit) => {
     setTempUnit(unit);
-  }
+  };
 
   useEffect(() => {
     try {
       const fetchCurrLocationData = async () => {
-        const response = await axios.get('https://ipapi.co/json');
+        const response = await axios.get("https://ipapi.co/json");
         const locationData = await response.data;
         setCity(locationData.city);
       };
       fetchCurrLocationData();
-    }catch(error) {
+    } catch (error) {
       console.log(error);
     }
-  }, [])
+  }, []);
 
   const fetchWeatherData = useCallback(async () => {
     setIsLoading(true);
