@@ -11,7 +11,7 @@ const TrHours = (props) => {
           <p className="text-paragraph">{props.title}</p>
           <p className="font-medium text-dark-100 dark:text-light-100 text-lg">
             +{tempUnit === "C" ? props.minTempC : props.minTempF}&deg;... +
-            {tempUnit === "F" ? props.maxTempC : props.minTempF}&deg;
+            {tempUnit === "C" ? props.maxTempC : props.minTempF}&deg;
           </p>
         </div>
         <div className="flex items-center mr-10">
