@@ -63,7 +63,7 @@ export const WeatherProvider = (props) => {
     if (city) {
       try {
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=5fb74b8a4f494d05a5a102734231206&q=${city}&days=10&aqi=no&alerts=no&lang=${lang}`,
+          `https://api.weatherapi.com/v1/forecast.json?key=5fb74b8a4f494d05a5a102734231206&q=${city}&days=10&aqi=no&alerts=no&lang=${lang}`,
           { headers: { "Content-Type": "application/json" } }
         );
         const weatherData = await response.data;
