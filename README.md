@@ -4,7 +4,7 @@ Weather app which views weather daily/hourly, get current location and display y
 
 tools: React.js, Context Api,  tailwindcss, axios, weatherapi.com, i18next (multi language), ipapi.com/json(get current location depending the ip), react-leaflet (map).
 
-Demo link: weather-application-o.netlify.app
+Demo link: https://weather-application-o.netlify.app/
 
 ## Available Scripts
 
