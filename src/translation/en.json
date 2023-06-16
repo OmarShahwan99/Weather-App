@@ -25,5 +25,9 @@
   "sep": "Sep",
   "oct": "Oct",
   "nov": "Nov",
-  "dec": "Dec"
+  "dec": "Dec",
+  "morning": "Morning",
+  "afternoon": "Day",
+  "evening": "Evening",
+  "night": "Night"
 }

@@ -32,7 +32,7 @@ const CurrentWeather = () => {
             </p>
             <h3 className="text-dark-100 dark:text-light-100 mb-4 text-2xl">
               {locationName}
-              <GrLocation className="text-dark-100 text-sm inline-block ml-3 dark:text-light-100" />
+              <GrLocation className="text-sm inline-block ml-3" />
             </h3>
             <h1 className="text-dark-100 dark:text-light-100 text-5xl font-medium">
               {tempUnit === "C"

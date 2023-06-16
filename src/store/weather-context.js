@@ -67,7 +67,6 @@ export const WeatherProvider = (props) => {
           { headers: { "Content-Type": "application/json" } }
         );
         const weatherData = await response.data;
-        console.log(weatherData);
         setIsLoading(false);
         setLocationName(weatherData.location.name);
         setLat(weatherData.location.lat);

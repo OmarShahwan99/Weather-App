@@ -1,6 +1,6 @@
-import LangBtn from "./LangBtn"
-import TempBtn from "./TempBtn"
-import ThemeBtn from "./ThemeBtn"
+import LangBtn from "./LangBtn";
+import TempBtn from "./TempBtn";
+import ThemeBtn from "./ThemeBtn";
 
 const Control = (props) => {
   return (
@@ -9,7 +9,7 @@ const Control = (props) => {
       <ThemeBtn mode={props.mode} onSwitch={props.onSwitchTheme} />
       <TempBtn unit={props.unit} onToggleUnit={props.onToggleUnit} />
     </div>
-  )
-}
+  );
+};
 
-export default Control
+export default Control;
