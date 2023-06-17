@@ -8,7 +8,7 @@ const TableHeader = (props) => {
   return (
     <thead className="border-b-2 border-paragraph">
       <tr>
-        <th colSpan={2} scope="col" className="px-6 py-4 flex gap-4 items-end">
+        <th colSpan={2} scope="col" className="px-6 pb-4 flex gap-4 items-end">
           <p
             className={`text-6xl font-medium ${
               formattedDateNow === today
