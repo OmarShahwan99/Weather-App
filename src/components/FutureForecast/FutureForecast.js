@@ -18,17 +18,25 @@ import { Navigation } from "swiper";
 import { useTranslation } from "react-i18next";
 
 const FutureForecast = () => {
-  const { futureForecast, tempUnit } = useContext(weatherContext);
+  const { futureForecast, tempUnit, lang } = useContext(weatherContext);
   const [t] = useTranslation("global");
 
   return (
     <Card>
-      <div className="relative">
-        <div className="absolute top-2/3 w-full z-10">
-          <button className="prevF-button p-1 text-lg bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute left-5">
+      <div className="relative group">
+        <div className="absolute top-2/3 w-full z-10 opacity-0 transition duration-300 group-hover:opacity-100">
+          <button
+            className={`${
+              lang === "AR" ? "nextF-button" : "prevF-button"
+            } p-1 text-lg bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute left-5`}
+          >
             <IoIosArrowBack />
           </button>
-          <button className="nextF-button p-1 text-lg bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute right-5">
+          <button
+            className={`${
+              lang === "AR" ? "prevF-button" : "nextF-button"
+            } p-1 text-lg bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute right-5`}
+          >
             <IoIosArrowForward />
           </button>
         </div>
@@ -46,6 +54,10 @@ const FutureForecast = () => {
               },
               320: {
                 slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              420: {
+                slidesPerView: 3,
               },
               520: {
                 slidesPerView: 4,
@@ -54,10 +66,10 @@ const FutureForecast = () => {
                 slidesPerView: 5,
               },
               991: {
-                slidesPerView: 6,
+                slidesPerView: 7,
               },
               1024: {
-                slidesPerView: 7,
+                slidesPerView: 9,
               },
             }}
             modules={[Navigation]}

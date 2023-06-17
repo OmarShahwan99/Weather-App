@@ -15,7 +15,7 @@ import { Navigation } from "swiper";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const TodaysForcast = () => {
-  const { todaysForecast, tempUnit } = useContext(weatherContext);
+  const { todaysForecast, tempUnit, lang } = useContext(weatherContext);
 
   const times = [
     "0:00",
@@ -69,10 +69,18 @@ const TodaysForcast = () => {
   return (
     <div className="relative">
       <div className="absolute top-1/2 w-full z-10">
-        <button className="prev-button p-1 text-xs bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute left-5">
+        <button
+          className={`${
+            lang === "AR" ? "next-button" : "prev-button"
+          } p-1 text-lg bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute left-5`}
+        >
           <IoIosArrowBack />
         </button>
-        <button className="next-button p-1 text-xs bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute right-5">
+        <button
+          className={`${
+            lang === "AR" ? "prev-button" : "next-button"
+          } p-1 text-lg bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute right-5`}
+        >
           <IoIosArrowForward />
         </button>
       </div>

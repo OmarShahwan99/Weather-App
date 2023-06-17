@@ -10,16 +10,17 @@ const DayWeatherInfo = () => {
   const limittedFutureForecast = futureForecast.slice(0, 3);
 
   return limittedFutureForecast.map((day) => (
-    <DayWeatherCard
-      key={day.date_epoch}
-      dayName={days[new Date(day.date).getDay()]}
-      dayOfMonth={new Date(day.date).getDate()}
-      monthName={monthNames[new Date(day.date).getMonth()]}
-      morningHours={day.hour.slice(0, 6)}
-      afternoonHours={day.hour.slice(6, 12)}
-      eveningHours={day.hour.slice(12, 18)}
-      nightHours={day.hour.slice(18, 24)}
-    />
+    <div className="my-10" key={day.date_epoch}>
+      <DayWeatherCard
+        dayName={days[new Date(day.date).getDay()]}
+        dayOfMonth={new Date(day.date).getDate()}
+        monthName={monthNames[new Date(day.date).getMonth()]}
+        morningHours={day.hour.slice(0, 6)}
+        afternoonHours={day.hour.slice(6, 12)}
+        eveningHours={day.hour.slice(12, 18)}
+        nightHours={day.hour.slice(18, 24)}
+      />
+    </div>
   ));
 };
 

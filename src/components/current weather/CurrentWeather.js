@@ -23,7 +23,7 @@ const CurrentWeather = () => {
 
   return (
     <Card>
-      <div className=" border-b-2 pb-5 border-b-paragraph">
+      <div className="border-b-2 pb-5 border-b-paragraph">
         <div className="flex px-5 justify-between gap-5 flex-wrap">
           <div>
             <p className="text-sm text-paragraph">
@@ -47,7 +47,6 @@ const CurrentWeather = () => {
             className="object-contain "
           />
         </div>
-        <p></p>
       </div>
       <TodaysForcast />
     </Card>

@@ -102,14 +102,20 @@ function App() {
           onSubmit={searchHandler}
         />
         {!isLoading && (
-          <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-              <CurrentWeather />
-              <Map />
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-8 my-10">
+              <div className="col-span-1 md:col-span-5">
+                <CurrentWeather />
+              </div>
+              <div className="col-span-1 md:col-span-7">
+                <Map />
+              </div>
             </div>
-            <FutureForecast />
+            <div className="my-10">
+              <FutureForecast />
+            </div>
             <DayWeatherInfo />
-          </div>
+          </>
         )}
         {isLoading && <Loading />}
       </div>

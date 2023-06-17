@@ -6,7 +6,7 @@ const FutureForecastItem = (props) => {
   const today = `${props.dayName} ${props.dayOfMonth} ${props.monthName}`;
 
   return (
-    <li className="flex flex-col justify-between">
+    <li className="flex flex-col justify-between items-center">
       <div>
         <p
           className={`text-2xl font-medium ${
@@ -15,7 +15,9 @@ const FutureForecastItem = (props) => {
               : "text-dark-100 dark:text-light-200"
           }`}
         >
-          {formattedDateNow === today ? t("today") : t(props.dayName.toLowerCase())}
+          {formattedDateNow === today
+            ? t("today")
+            : t(props.dayName.toLowerCase())}
         </p>
         <p className="text-paragraph">
           {props.dayOfMonth} {t(props.monthName.toLowerCase())}
@@ -32,7 +34,7 @@ const FutureForecastItem = (props) => {
           <sup>&deg;{props.unit}</sup>
         </span>
       </p>
-      <span className="text-paragraph text-sm">{props.text}</span>
+      <span className="text-paragraph text-center text-sm">{props.text}</span>
     </li>
   );
 };
