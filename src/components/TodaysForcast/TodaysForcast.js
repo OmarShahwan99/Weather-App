@@ -72,14 +72,14 @@ const TodaysForcast = () => {
         <button
           className={`${
             lang === "AR" ? "next-button" : "prev-button"
-          } p-1 text-lg bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute left-5`}
+          } p-1 text-lg bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute left-2`}
         >
           <IoIosArrowBack />
         </button>
         <button
           className={`${
             lang === "AR" ? "prev-button" : "next-button"
-          } p-1 text-lg bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute right-5`}
+          } p-1 text-lg bg-light-100 dark:bg-paragraph rounded-full text-dark-200 absolute right-2`}
         >
           <IoIosArrowForward />
         </button>
@@ -92,21 +92,23 @@ const TodaysForcast = () => {
           breakpoints={{
             220: {
               slidesPerView: 3,
+              slidesPerGroup: 3,
             },
             320: {
               slidesPerView: 4,
+              slidesPerGroup: 4,
             },
             520: {
               slidesPerView: 7,
-              spaceBetween: 0,
+              slidesPerGroup: 7,
             },
             768: {
               slidesPerView: 4,
-              spaceBetween: 0,
+              slidesPerGroup: 4,
             },
             1024: {
               slidesPerView: 6,
-              spaceBetween: 0,
+              slidesPerGroup: 6,
             },
           }}
           modules={[Navigation]}
