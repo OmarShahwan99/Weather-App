@@ -5,10 +5,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 }
 .lds-dual-ring:after {
-  content: " ";
+  content: "";
   display: block;
   width: 180px;
   height: 180px;
