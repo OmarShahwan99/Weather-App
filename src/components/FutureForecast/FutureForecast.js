@@ -40,7 +40,7 @@ const FutureForecast = () => {
             <IoIosArrowForward />
           </button>
         </div>
-        <h2 className="px-5 font-medium text-2xl pb-5 text-dark-100 dark:text-light-200 border-b-paragraph border-b-2">
+        <h2 className="px-5 font-medium text-2xl pb-5 text-dark-100 dark:text-light-200 border-light-300 dark:border-dark-300 border-b-2">
           {t("title")}
         </h2>
         <div className="px-16 mt-10">

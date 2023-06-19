@@ -87,38 +87,44 @@ function App() {
 
   const directionClass = lang === "AR" ? "rtl" : "ltr";
 
+  if (mode === "dark") {
+    document.body.classList.remove("bg-light-100");
+    document.body.classList.add("bg-dark-100");
+  } else {
+    document.body.classList.remove("bg-dark-100");
+    document.body.classList.add("bg-light-100");
+  }
+
   return (
-    <div className="min-h-screen bg-light-100 dark:bg-dark-100">
-      <div className={`container py-8 ${directionClass}`}>
-        <Header
-          lang={lang}
-          mode={mode}
-          unit={tempUnit}
-          onSwitchTheme={toggleThemeHandler}
-          onToggleLang={(event) => selectLangHandler(event.target.innerHTML)}
-          onToggleUnit={(event) => toggleUnitHandler(event.target.innerHTML)}
-          searchValue={enteredCity}
-          onChange={(event) => setEnteredCity(event.target.value)}
-          onSubmit={searchHandler}
-        />
-        {!isLoading && (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-8 my-10">
-              <div className="col-span-1 md:col-span-5">
-                <CurrentWeather />
-              </div>
-              <div className="col-span-1 md:col-span-7">
-                <Map />
-              </div>
+    <div className={`py-8 ${directionClass}`}>
+      <Header
+        lang={lang}
+        mode={mode}
+        unit={tempUnit}
+        onSwitchTheme={toggleThemeHandler}
+        onToggleLang={(event) => selectLangHandler(event.target.innerHTML)}
+        onToggleUnit={(event) => toggleUnitHandler(event.target.innerHTML)}
+        searchValue={enteredCity}
+        onChange={(event) => setEnteredCity(event.target.value)}
+        onSubmit={searchHandler}
+      />
+      {!isLoading && (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-8 my-10 container">
+            <div className="col-span-1 md:col-span-5">
+              <CurrentWeather />
             </div>
-            <div className="my-10">
-              <FutureForecast />
+            <div className="col-span-1 md:col-span-7">
+              <Map />
             </div>
-            <DayWeatherInfo />
-          </>
-        )}
-        {isLoading && <Loading />}
-      </div>
+          </div>
+          <div className="my-10 container">
+            <FutureForecast />
+          </div>
+          <DayWeatherInfo />
+        </>
+      )}
+      {isLoading && <Loading />}
     </div>
   );
 }

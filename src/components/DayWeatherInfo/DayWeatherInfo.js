@@ -10,7 +10,7 @@ const DayWeatherInfo = () => {
   const limittedFutureForecast = futureForecast.slice(0, 3);
 
   return limittedFutureForecast.map((day) => (
-    <div className="my-10" key={day.date_epoch}>
+    <div className="my-10 container" key={day.date_epoch}>
       <DayWeatherCard
         dayName={days[new Date(day.date).getDay()]}
         dayOfMonth={new Date(day.date).getDate()}

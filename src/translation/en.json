@@ -29,5 +29,6 @@
   "morning": "Morning",
   "afternoon": "Day",
   "evening": "Evening",
-  "night": "Night"
+  "night": "Night",
+  "now": "Now"
 }

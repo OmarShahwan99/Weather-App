@@ -23,7 +23,7 @@ const CurrentWeather = () => {
 
   return (
     <Card>
-      <div className="border-b-2 pb-5 border-b-paragraph">
+      <div className="border-b-2 pb-5 border-light-300 dark:border-dark-300">
         <div className="flex px-5 justify-between gap-5 flex-wrap">
           <div>
             <p className="text-sm text-paragraph">

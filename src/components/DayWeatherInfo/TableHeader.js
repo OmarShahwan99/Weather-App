@@ -6,7 +6,7 @@ const TableHeader = (props) => {
   const [t] = useTranslation("global");
 
   return (
-    <thead className="border-b-2 border-paragraph">
+    <thead className="border-b-2 border-light-300 dark:border-dark-300">
       <tr>
         <th colSpan={2} scope="col" className="px-6 pb-4 flex gap-4 items-end">
           <p
