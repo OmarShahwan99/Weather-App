@@ -2,7 +2,7 @@
 
 Weather app which views weather daily/hourly, get current location and display your location weather, multi language support (ar & en), dark & light theme, search locations.
 
-tools: React.js, Context Api,  tailwindcss, axios, weatherapi.com, i18next (multi language), ipapi.com/json(get current location depending the ip), react-leaflet (map).
+used technologies: React.js, Context Api,  tailwindcss, axios, weatherapi.com, i18next (multi language), ipapi.com/json(get current location depending the ip), react-leaflet (map).
 
 Demo link: https://weather-application-o.netlify.app/
 
